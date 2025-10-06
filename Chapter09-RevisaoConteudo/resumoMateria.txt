@@ -182,6 +182,9 @@ Podemos acessar por : tags, ids, classes;
 Com a evolução da linguagem, foram criados dois seletores que acabam com toda a complexidade desta ação;
 querySelector e querySelectorAll;
 Com estes podemos acessar os elementos baseados em regras de CSS;
+Outra possibilidade do JS e o DOM é criar elementos;
+O texto de um elemento é considerado um nó na árvore do DOM;
+Ou seja, temos que criar o texto do elemento também;
 
 ---- Elementos DOM ----
 
@@ -200,3 +203,5 @@ Exemplo: body[0].appendChild(listaUl);
 document.getElementById():
 Seleciona determinado id, caso receba mais de um, retorna somente o primeiro.
 Exemplo: const paragrafo = document.getElementById('paragrafo');
+
+---- 
