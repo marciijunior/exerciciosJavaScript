@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    background-color: #0d0221;
+    color: #f0f0f0;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 800px;
+    padding: 2em;
+    background: rgba(13, 2, 33, 0.6);
+    border: 2px solid #a200ff;
+    border-radius: 15px;
+    box-shadow: 0 0 25px #a200ff, 0 0 35px #a200ff inset;
+    animation: pulse 5s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        box-shadow: 0 0 15px #a200ff, 0 0 20px #a200ff inset;
+        border-color: #a200ff;
+    }
+    to {
+        box-shadow: 0 0 30px #ff00c1, 0 0 40px #ff00c1 inset;
+        border-color: #ff00c1;
+    }
+}
+
+h2 {
+    color: #00d9ff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 
+        0 0 5px #00d9ff,
+        0 0 10px #00d9ff,
+        0 0 20px #00d9ff,
+        0 0 40px #00d9ff,
+        0 0 80px #00d9ff;
+}
+
+textarea, .caixaTextoVisao {
+    width: 100%;
+    min-height: 200px;
+    padding: 15px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid #00d9ff;
+    color: #e0e0e0;
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+}
+
+textarea {
+    margin-bottom: 25px;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #ff00c1;
+    box-shadow: 0 0 15px #ff00c1;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0d0221;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a200ff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #a200ff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff00c1;
+    box-shadow: 0 0 10px #ff00c1;
+}
+
+.preview-area strong {
+    color: #f3ff58;
+    text-shadow: 0 0 5px #f3ff58;
+}
+
+.preview-area u {
+    color: #58ff81;
+    text-decoration-color: #58ff81;
+    text-shadow: 0 0 5px #58ff81;
+}
