@@ -12,7 +12,7 @@ frm.addEventListener("submit", (e) => {
   }
 
   let total = valorTotal - desconto;
-  
+
   resultadoUm.innerText = `Total a pagar: R$ ${total.toFixed(2)}`;
   e.preventDefault();
 });
