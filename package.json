@@ -1,0 +1,23 @@
+{
+  "name": "exerciciosjavascript",
+  "version": "1.0.0",
+  "description": "Uma apostila prática focada em consolidar seus conhecimentos em JavaScript através de exemplos claros e uma série de exercícios desafiadores. Ideal para quem está começando ou deseja revisar os fundamentos da linguagem.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marciijunior/exerciciosJavaScript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marciijunior/exerciciosJavaScript/issues"
+  },
+  "homepage": "https://github.com/marciijunior/exerciciosJavaScript#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
