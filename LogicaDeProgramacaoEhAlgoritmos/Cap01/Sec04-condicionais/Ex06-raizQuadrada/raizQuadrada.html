@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <p>
+        Adicione um número para saber se existe raiz quadrada exata:
+        <input type="number" id="inNumero" />
+      </p>
+      <p>Calcular raiz quadrada<input type="submit" /></p>
+      <h3></h3>
+    </form>
+    <script>
+      const frm = document.querySelector("form");
+      const respostaUm = document.querySelector("h3");
+      const procurarRaiz = (numero) => {
+        const numeroCalculado = Math.sqrt(numero);
+        if (Number.isInteger(numeroCalculado)) {
+          respostaUm.innerText = `A raiz quadrada exata de ${numero} é ${numeroCalculado}`;
+        } else {
+          respostaUm.innerText = `O número ${numero} não possui raiz quadrada exata.`;
+        }
+      };
+
+      frm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const numero = Number(document.getElementById("inNumero").value);
+        if (isNaN(numero) || numero < 0) {
+          respostaUm.innerText = "Digite um número válido e positivo.";
+          return;
+        }
+        procurarRaiz(numero);
+      });
+    </script>
+  </body>
+</html>
