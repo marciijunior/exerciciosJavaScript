@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa Eletrônico</title>
+</head>
+<body>
+    <form>
+        <p>
+            Digite o valor a ser sacado: <input type="number" id="inValor" min="0" step="0.01" required>
+        </p>
+        <p>
+            <input type="submit" value="Sacar">
+        </p>
+        <h3 id="inRespostaUm"></h3>
+        <h3 id="inRespostaDois"></h3>
+        <h3 id="inRespostaTres"></h3>
+    </form>
+    <script>
+        const frm = document.querySelector("form");
+        const respostaUm = document.querySelector("#inRespostaUm");
+        const respostaDois = document.querySelector("#inRespostaDois");
+        const respostaTres = document.querySelector("#inRespostaTres");
+
+        frm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const saque = Number(frm.inValor.value);
+            if (saque % 10 !== 0) {
+                alert("O valor não pode ser sacado, adicione outro valor que seja divisível por 10!");
+                frm.inValor.focus();
+                return;
+            }
+            const notasCem = Math.floor(saque / 100);
+            let resto = saque % 100;
+            const notasCinquenta = Math.floor(resto / 50);
+            resto = resto % 50;
+            const notasDez = Math.floor(resto / 10);
+            if (notasCem > 0) {
+                respostaUm.innerText = `Notas de R$100: ${notasCem}`;
+            }
+            if (notasCinquenta > 0) {
+                respostaDois.innerText = `Notas de R$50: ${notasCinquenta}`;
+            }
+            if (notasDez > 0) {
+                respostaTres.innerText = `Notas de R$10: ${notasDez}`;
+            }
+        })
+    </script>
+</body>
+</html>

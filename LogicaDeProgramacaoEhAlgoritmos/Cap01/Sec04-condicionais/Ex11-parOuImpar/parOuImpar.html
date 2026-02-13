@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Par ou Impar</title>
+  </head>
+  <body>
+    <form>
+      <p><input type="number" min="0" id="inNumero" /></p>
+      <p><input type="submit" value="Verificar se é par ou ímpar" /></p>
+    </form>
+    <h3></h3>
+    <script>
+      const frm = document.querySelector("form");
+      const respostaUm = document.querySelector("h3");
+
+      frm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const numero = Number(frm.inNumero.value);
+        if (numero % 2 === 0) {
+          respostaUm.innerText = "Esse número é Par.";
+        } else {
+          respostaUm.innerText = "Esse número é Ímpar.";
+        }
+      });
+    </script>
+  </body>
+</html>

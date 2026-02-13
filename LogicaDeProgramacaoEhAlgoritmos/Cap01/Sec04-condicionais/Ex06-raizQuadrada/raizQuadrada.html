@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Raiz quadrada</title>
   </head>
   <body>
     <form>
@@ -11,7 +11,7 @@
         Adicione um número para saber se existe raiz quadrada exata:
         <input type="number" id="inNumero" />
       </p>
-      <p>Calcular raiz quadrada<input type="submit" /></p>
+      <p><input type="submit" value="Calcular a raiz quadrada" /></p>
       <h3></h3>
     </form>
     <script>
@@ -28,7 +28,7 @@
 
       frm.addEventListener("submit", (e) => {
         e.preventDefault();
-        const numero = Number(document.getElementById("inNumero").value);
+        const numero = Number(frm.inNumero.value);
         if (isNaN(numero) || numero < 0) {
           respostaUm.innerText = "Digite um número válido e positivo.";
           return;
