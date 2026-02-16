@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sequência de números</title>
+  </head>
+  <body>
+    <form>
+      <p>
+        Escolha o número para a contagem:
+        <input type="number" id="inNumero" step="1" min="0" max="20" />
+      </p>
+      <p><input type="submit" value="Contar" /></p>
+    </form>
+    <h3></h3>
+    <script>
+      const frm = document.querySelector("form");
+      const respostaUm = document.querySelector("h3");
+
+      frm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const numero = Number(frm.inNumero.value);
+        let texto = `Contador de números de ${numero} até 1: `;
+        for (let i = numero; i >= 1; i--) {
+          texto += i + (i > 1 ? ", " : ".");
+        }
+        respostaUm.innerText = texto;
+      });
+    </script>
+  </body>
+</html>
