@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <p>
+        Digite um número par:
+        <input type="Number" id="inNumero" min="0" step="2" />
+      </p>
+      <p><input type="submit" value="Clique para contar" /></p>
+      <h3></h3>
+    </form>
+    <script>
+      const frm = document.querySelector("form");
+      const resposta = document.querySelector("h3");
+
+      frm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const numero = Number(frm.inNumero.value);
+
+        if (numero % 2 !== 0 || numero === 0) {
+          alert("Insira um número par maior que zero!");
+          frm.inNumero.value = "";
+          frm.inNumero.focus();
+          resposta.textContent = "";
+          return;
+        }
+
+        let pares = "Seus números pares são: ";
+        let i = 2;
+        do {
+          pares += i + (i < numero ? ", " : "");
+          i += 2;
+        } while (i <= numero);
+        resposta.textContent = pares;
+      });
+    </script>
+  </body>
+</html>
