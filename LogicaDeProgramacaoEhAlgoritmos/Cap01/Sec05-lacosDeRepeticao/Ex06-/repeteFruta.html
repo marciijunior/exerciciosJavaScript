@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repete Frutas</title>
+  </head>
+  <body>
+    <form>
+      <p>Fruta: <input type="text" id="inFruta" /></p>
+      <p>Quantidade: <input type="number" id="inQuantidade" min="0" /></p>
+      <p><input type="submit" value="Escrever frutas" /></p>
+    </form>
+    <h3></h3>
+    <script>
+      const frm = document.querySelector("form");
+      const resposta = document.querySelector("h3");
+
+      frm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const fruta = frm.inFruta.value;
+        const numero = Number(frm.inQuantidade.value);
+        let textInit = "";
+
+        for (let i = 1; i <= numero; i++) {
+          textInit += fruta;
+          if (i < numero) {
+            textInit += "*";
+          }
+        }
+        resposta.innerText = textInit;
+      });
+    </script>
+  </body>
+</html>

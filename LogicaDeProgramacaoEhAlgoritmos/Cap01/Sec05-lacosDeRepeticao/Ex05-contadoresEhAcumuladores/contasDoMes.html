@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programa contas do mês</title>
+  </head>
+  <body>
+    <form>
+      <p>Descrição da Conta: <input type="text" id="inDescricao" required /></p>
+      <p><input type="number" min="0" step="0.01" id="inValor" required /></p>
+      <p><input type="submit" value="Registrar Conta" /></p>
+    </form>
+    <pre id="outResp1"></pre>
+    <pre id="outResp2"></pre>
+    <script>
+      const frm = document.querySelector("form");
+      const outResp1 = document.querySelector("#outResp1");
+      const outResp2 = document.querySelector("#outResp2");
+
+      let resposta = "";
+      let numContas = 0;
+      let valTotal = 0;
+
+      frm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const descricao = frm.inDescricao.value;
+        const valor = Number(frm.inValor.value);
+
+        numContas++;
+        valTotal = valTotal + valor;
+        resposta = resposta + descricao + " - R$: " + valor.toFixed(2) + "\n";
+        outResp1.innerText = `${resposta}---------------------------`;
+        outResp2.innerText = `${numContas} Conta(s) - Total R$: ${valTotal.toFixed(2)}`;
+
+        frm.inDescricao.value = "";
+        frm.inValor.value = "";
+        frm.inDescricao.focus();
+      });
+    </script>
+  </body>
+</html>
