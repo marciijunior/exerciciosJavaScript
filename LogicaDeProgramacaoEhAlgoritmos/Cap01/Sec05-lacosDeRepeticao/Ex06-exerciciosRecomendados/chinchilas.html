@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chinchilas</title>
+  </head>
+  <body>
+    <form>
+      <p>
+        Número de chinchilas:
+        <input type="number" id="inQuantidade" min="2" />
+      </p>
+      <p>
+        Anos passados:
+        <input type="number" id="inAnos" min="0" />
+      </p>
+      <input type="submit" value="Calcular quantidade de chinchilas" />
+      <pre></pre>
+    </form>
+    <script>
+      const frm = document.querySelector("form");
+      const resposta = document.querySelector("pre");
+
+      let numeroChinchilas = 0;
+      let lista = "";
+
+      frm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const qtdd = Number(frm.inQuantidade.value);
+        const qtddAnos = Number(frm.inAnos.value);
+
+        chinchilasReproduzidas = 0;
+
+        for (let i = 0; i <= qtddAnos; i++) {
+          numeroChinchilas = qtdd * i;
+          chinchilasReproduzidas = numeroChinchilas * 3;
+          lista += `${i} Ano(s): ${chinchilasReproduzidas} \n`;
+        }
+        resposta.innerText = lista;
+      });
+    </script>
+  </body>
+</html>
